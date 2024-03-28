@@ -893,8 +893,7 @@ main {
   margin-bottom: 25px;
 }
 
-.timeline-list,
-.slideshow {
+.timeline-list {
   font-size: var(--fs-6);
   margin-left: 45px;
 }
@@ -1682,8 +1681,7 @@ textarea.form-input::-webkit-resizer {
    * #RESUME
    */
 
-  .timeline-list,
-  .slideshow {
+  .timeline-list {
     margin-left: 65px;
   }
 
