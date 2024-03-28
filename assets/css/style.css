@@ -9,48 +9,36 @@
 
   /* gradient */
 
-  --bg-gradient-onyx: linear-gradient(
-    to bottom right,
-    hsl(240, 1%, 25%) 3%,
-    hsl(0, 0%, 19%) 97%
-  );
-  --bg-gradient-jet: linear-gradient(
-      to bottom right,
+  --bg-gradient-onyx: linear-gradient(to bottom right,
+      hsl(240, 1%, 25%) 3%,
+      hsl(0, 0%, 19%) 97%);
+  --bg-gradient-jet: linear-gradient(to bottom right,
       hsla(207, 84%, 10%, 0.251) 20%,
-      hsla(212, 70%, 1%, 0) 100%
-    ),
+      hsla(212, 70%, 1%, 0) 100%),
     hsl(212, 70%, 3%);
-  --bg-gradient-yellow-1: linear-gradient(
-    to bottom right,
-    hsl(45, 100%, 71%) 0%,
-    hsla(36, 100%, 69%, 0) 50%
-  );
-  --bg-gradient-yellow-2: linear-gradient(
-      135deg,
+  --bg-gradient-yellow-1: linear-gradient(to bottom right,
+      hsl(45, 100%, 71%) 0%,
+      hsla(36, 100%, 69%, 0) 50%);
+  --bg-gradient-yellow-2: linear-gradient(135deg,
       hsla(45, 100%, 71%, 0.251) 0%,
-      hsla(35, 100%, 68%, 0) 59.86%
-    ),
+      hsla(35, 100%, 68%, 0) 59.86%),
     hsl(240, 2%, 13%);
   /* --border-gradient-onyx: linear-gradient(
     to bottom right, 
     hsl(0, 0%, 25%) 0%, 
     hsla(0, 0%, 25%, 0) 50%
   ); */
-  --border-gradient-onyx: linear-gradient(
-    to bottom right,
-    hsl(207, 84%, 11%) 0%,
-    hsla(207, 84%, 11%, 0) 50%
-  );
-  --text-gradient-yellow: linear-gradient(
-    to right,
-    hsl(209, 73%, 31%),
-    hsl(209, 71%, 35%)
-  );
+  --border-gradient-onyx: linear-gradient(to bottom right,
+      hsl(207, 84%, 11%) 0%,
+      hsla(207, 84%, 11%, 0) 50%);
+  --text-gradient-yellow: linear-gradient(to right,
+      hsl(209, 73%, 31%),
+      hsl(209, 71%, 35%));
 
   /* solid */
 
   /* --jet: hsl(0, 0%, 22%); */
-  --jet: hsl(207, 84%, 11%);
+  --jet: hsl(207, 84%, 15%);
   --onyx: hsl(240, 1%, 17%);
   /* --eerie-black-1: hsl(240, 2%, 13%); */
   --eerie-black-1: hsl(228, 24%, 7%);
@@ -171,6 +159,63 @@ body {
 }
 
 /*-----------------------------------*\
+  #Slideshow STYLE
+\*-----------------------------------*/
+
+.slideshow {
+  height: 50px;
+  margin-top: 30px;
+  margin-bottom: 40px;
+  position: relative;
+  transform: translate3d(0, 0, 0);
+  display: flex;
+  overflow: hidden;
+}
+
+.move {
+  height: 100%;
+  transform: translate3d(0, 0, 0);
+  display: flex;
+  justify-content: space-between;
+  animation: moveSlideshow 10s linear infinite;
+}
+
+.move>img {
+  margin: 0 20px;
+  width: 50px;
+  height: 50px;
+  width: auto;
+}
+
+.slideshow:hover .move {
+  animation-play-state: paused;
+}
+
+@media screen and (max-width: 767px) {
+  .move>img {
+    margin: 0 10px;
+    width: 30px;
+    height: 30px;
+    width: auto;
+  }
+
+  .slideshow {
+    height: 30px;
+  }
+}
+
+@keyframes moveSlideshow {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+
+}
+
+/*-----------------------------------*\
   #REUSED STYLE
 \*-----------------------------------*/
 
@@ -232,6 +277,7 @@ article.active {
   0% {
     opacity: 0;
   }
+
   100% {
     opacity: 1;
   }
@@ -279,8 +325,10 @@ article.active {
 }
 
 .has-scrollbar::-webkit-scrollbar {
-  width: 5px; /* for vertical scrollbar */
-  height: 5px; /* for horizontal scrollbar */
+  width: 5px;
+  /* for vertical scrollbar */
+  height: 5px;
+  /* for horizontal scrollbar */
 }
 
 .has-scrollbar::-webkit-scrollbar-track {
@@ -359,7 +407,9 @@ main {
   background: #e5f8fe;
 }
 
-.avatar-box img { transform: rotate(45deg) scale(1.5) translate(17px, -9px) !important;}
+.avatar-box img {
+  transform: rotate(45deg) scale(1.5) translate(17px, -9px) !important;
+}
 
 
 .info-content .name {
@@ -760,7 +810,7 @@ main {
   box-shadow: var(--shadow-2);
 }
 
-.modal-img-wrapper > img {
+.modal-img-wrapper>img {
   display: none;
 }
 
@@ -843,7 +893,8 @@ main {
   margin-bottom: 25px;
 }
 
-.timeline-list {
+.timeline-list,
+.slideshow {
   font-size: var(--fs-6);
   margin-left: 45px;
 }
@@ -894,6 +945,16 @@ main {
   color: var(--light-gray);
   font-weight: var(--fw-300);
   line-height: 1.6;
+}
+
+ul.timeline-text li {
+  display: flex;
+}
+
+ul.timeline-text li::before {
+  content: "-";
+  display: block;
+  margin-right: 5px;
 }
 
 /**
@@ -984,7 +1045,7 @@ main {
   transition: 0.15s ease-in-out;
 }
 
-.filter-select.active + .select-list {
+.filter-select.active+.select-list {
   opacity: 1;
   visibility: visible;
   pointer-events: all;
@@ -1025,12 +1086,13 @@ main {
   0% {
     transform: scale(0.5);
   }
+
   100% {
     transform: scale(1);
   }
 }
 
-.project-item > a {
+.project-item>a {
   width: 100%;
 }
 
@@ -1055,7 +1117,7 @@ main {
   transition: var(--transition-1);
 }
 
-.project-item > a:hover .project-img::before {
+.project-item>a:hover .project-img::before {
   background: hsla(0, 0%, 0%, 0.5);
 }
 
@@ -1076,7 +1138,7 @@ main {
   transition: var(--transition-1);
 }
 
-.project-item > a:hover .project-item-icon-box {
+.project-item>a:hover .project-item-icon-box {
   --scale: 1;
   opacity: 1;
 }
@@ -1092,7 +1154,7 @@ main {
   transition: var(--transition-1);
 }
 
-.project-item > a:hover img {
+.project-item>a:hover img {
   transform: scale(1.1);
 }
 
@@ -1129,7 +1191,7 @@ main {
   gap: 20px;
 }
 
-.blog-post-item > a {
+.blog-post-item>a {
   position: relative;
   background: var(--border-gradient-onyx);
   height: 100%;
@@ -1138,7 +1200,7 @@ main {
   z-index: 1;
 }
 
-.blog-post-item > a::before {
+.blog-post-item>a::before {
   content: "";
   position: absolute;
   inset: 1px;
@@ -1161,7 +1223,7 @@ main {
   transition: var(--transition-1);
 }
 
-.blog-post-item > a:hover .blog-banner-box img {
+.blog-post-item>a:hover .blog-banner-box img {
   transform: scale(1.1);
 }
 
@@ -1196,7 +1258,7 @@ main {
   transition: var(--transition-1);
 }
 
-.blog-post-item > a:hover .blog-item-title {
+.blog-post-item>a:hover .blog-item-title {
   color: var(--orange-yellow-crayola);
 }
 
@@ -1597,7 +1659,7 @@ textarea.form-input::-webkit-resizer {
     width: 65px;
   }
 
-  .modal-img-wrapper > img {
+  .modal-img-wrapper>img {
     display: block;
     flex-grow: 1;
     width: 35px;
@@ -1620,7 +1682,8 @@ textarea.form-input::-webkit-resizer {
    * #RESUME
    */
 
-  .timeline-list {
+  .timeline-list,
+  .slideshow {
     margin-left: 65px;
   }
 
