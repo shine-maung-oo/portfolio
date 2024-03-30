@@ -1069,6 +1069,7 @@ ul.timeline-text li::before {
   display: grid;
   grid-template-columns: 1fr;
   gap: 30px;
+  row-gap: 50px;
   margin-bottom: 10px;
 }
 
@@ -1157,8 +1158,13 @@ ul.timeline-text li::before {
   transform: scale(1.1);
 }
 
+.project-item span {
+  font-size: 13px;  
+  color: var(--orange-yellow-crayola);
+}
+
 .project-title,
-.project-category {
+.project-category, .project-item span {
   margin-left: 10px;
 }
 
