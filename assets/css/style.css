@@ -405,10 +405,11 @@ main {
   border-radius: 20px;
   overflow: hidden;
   background: #e5f8fe;
+  /* filter: grayscale(1); */
 }
 
 .avatar-box img {
-  transform: rotate(45deg) scale(1.5) translate(17px, -9px) !important;
+  transform: rotate(45deg) scale(1.4) translate(20px, -7px) !important;
 }
 
 
@@ -1159,12 +1160,13 @@ ul.timeline-text li::before {
 }
 
 .project-item span {
-  font-size: 13px;  
+  font-size: 13px;
   color: var(--orange-yellow-crayola);
 }
 
 .project-title,
-.project-category, .project-item span {
+.project-category,
+.project-item span {
   margin-left: 10px;
 }
 
@@ -1511,7 +1513,7 @@ textarea.form-input::-webkit-resizer {
 
   .avatar-box img {
     width: 120px;
-    transform: rotate(45deg) scale(1.5) translate(26px, -13px) !important;
+    transform: rotate(45deg) scale(1.4) translate(30px, -10px) !important;
   }
 
   .info-content .name {
@@ -2054,8 +2056,7 @@ textarea.form-input::-webkit-resizer {
   }
 
   .avatar-box img {
-    width: 150px;
-    transform: rotate(45deg) scale(1.5) translate(31px, -16px) !important;
+    transform: rotate(45deg) scale(1.4) translate(30px, -10px) !important;
   }
 
   .info-content .name {
