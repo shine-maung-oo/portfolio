@@ -1281,13 +1281,13 @@
 
           <form action="#" class="form" data-form>
             <div class="input-wrapper">
-              <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input />
+              <input type="text" name="fullname" id="fullname" class="form-input" placeholder="Full name" required data-form-input />
 
-              <input type="email" name="email" class="form-input" placeholder="Email address" required
+              <input type="email" name="email" id="email" class="form-input" placeholder="Email address" required
                 data-form-input />
             </div>
 
-            <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
+            <textarea name="message" id="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
 
             <button class="form-btn" type="submit" disabled data-form-btn>
               <ion-icon name="paper-plane"></ion-icon>
@@ -1302,6 +1302,8 @@
   <!--
     - custom js link
   -->
+  <script src="https://smtpjs.com/v3/smtp.js">
+  </script>
   <script src="./assets/js/script.js"></script>
 
   <!--
