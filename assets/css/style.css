@@ -2109,3 +2109,26 @@ textarea.form-input::-webkit-resizer {
     max-width: 700px;
   }
 }
+
+#alertBox {
+  color: var(--orange-yellow-crayola);
+  font-size: var(--fs-6);
+  background: var(--border-gradient-onyx);
+  border: 1px solid var(--jet);
+  border-radius: 10px;
+  background-color: var(--smoky-black);
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+#alertMessage {
+  display: block;
+}
+
+.closeBtn {
+  display: block;
+  font-size: 20px;
+}

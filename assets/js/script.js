@@ -136,25 +136,33 @@ form.addEventListener("submit", function (event) {
     Subject: "Contact From " + name.value,
     Body: ebody,
   }).then((response) => {
+    var alertMessage = document.getElementById("alertMessage");
+    var alertBox = document.getElementById("alertBox");
     if (response === "OK") {
-      console.log("Email sent successfully!");
+      Email.send({
+        SecureToken: "197b6bad-f76b-4f7b-b050-b64a81c5edac",
+        To: email.value,
+        From: "shinemaungoo.smo@gmail.com",
+        Subject: "Thank you for contacting me",
+        Body: "Thank for contacting me, " + name.value + ".",
+      }).then((response) => {
+        if (response === "OK") {
+          console.log("Email sent successfully!");
+        } else {
+          console.error("Error sending email: " + response);
+        }
+      });
+      alertMessage.innerHTML = "Email sent successfully!";
+      name.value = "";
+      email.value = "";
+      message.value = "";
     } else {
-      console.error("Error sending email: " + response);
+      alertMessage.innerHTML = "Error sending email: " + response;
     }
-  });
-
-  Email.send({
-    SecureToken: "197b6bad-f76b-4f7b-b050-b64a81c5edac",
-    To: email.value,
-    From: "shinemaungoo.smo@gmail.com",
-    Subject: "Thank you for contacting me",
-    Body: "Thank for contacting me, " + name.value + ".",
-  }).then((response) => {
-    if (response === "OK") {
-      console.log("Email sent successfully!");
-    } else {
-      console.error("Error sending email: " + response);
-    }
+    alertBox.style.display = "flex";
+    setTimeout(function () {
+      alertBox.style.display = "none";
+    }, 3000);
   });
 });
 

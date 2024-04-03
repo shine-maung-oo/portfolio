@@ -1277,17 +1277,23 @@
         </section> -->
 
         <section class="contact-form">
+          <div id="alertBox" style="display: none;">
+            <span id="alertMessage">Email sent successfully!</span>
+            <span class="closeBtn" onclick="this.parentElement.style.display='none';"><ion-icon
+                name="close-circle-outline"></ion-icon></span>
+          </div>
           <h3 class="h3 form-title">Contact Form</h3>
-
           <form action="#" class="form" data-form>
             <div class="input-wrapper">
-              <input type="text" name="fullname" id="fullname" class="form-input" placeholder="Full name" required data-form-input />
+              <input type="text" name="fullname" id="fullname" class="form-input" placeholder="Full name" required
+                data-form-input />
 
               <input type="email" name="email" id="email" class="form-input" placeholder="Email address" required
                 data-form-input />
             </div>
 
-            <textarea name="message" id="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
+            <textarea name="message" id="message" class="form-input" placeholder="Your Message" required
+              data-form-input></textarea>
 
             <button class="form-btn" type="submit" disabled data-form-btn>
               <ion-icon name="paper-plane"></ion-icon>
