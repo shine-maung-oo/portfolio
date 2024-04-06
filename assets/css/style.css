@@ -404,12 +404,14 @@ main {
   border: 5px solid var(--jet);
   border-radius: 20px;
   overflow: hidden;
-  background: #e5f8fe;
+  /* background: #e5f8fe; */
   /* filter: grayscale(1); */
 }
 
 .avatar-box img {
-  transform: rotate(45deg) scale(1.4) translate(20px, -7px) !important;
+  transform: scale(1.4) translateY(6px);
+  aspect-ratio: 1/1;
+  /* transform: rotate(45deg) scale(1.4) translate(20px, -7px) !important; */
 }
 
 
@@ -1509,11 +1511,14 @@ textarea.form-input::-webkit-resizer {
 
   .avatar-box {
     border-radius: 25px;
+    width: 120px;
   }
 
   .avatar-box img {
-    width: 120px;
-    transform: rotate(45deg) scale(1.4) translate(30px, -10px) !important;
+    width: 100%;
+    transform: scale(1.4) translateY(6px);
+    aspect-ratio: 1/1;
+    /* transform: rotate(45deg) scale(1.4) translate(30px, -10px) !important; */
   }
 
   .info-content .name {
@@ -2056,7 +2061,9 @@ textarea.form-input::-webkit-resizer {
   }
 
   .avatar-box img {
-    transform: rotate(45deg) scale(1.4) translate(30px, -10px) !important;
+    transform: scale(1.4) translateY(6px);
+    aspect-ratio: 1/1;
+    /* transform: rotate(45deg) scale(1.4) translate(30px, -10px) !important; */
   }
 
   .info-content .name {
